@@ -126,45 +126,45 @@ export default function HomePage() {
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Cursor Follower */}
       <div 
-        className="fixed w-6 h-6 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full pointer-events-none z-50 mix-blend-difference transition-transform duration-100 ease-out"
+        className="fixed w-4 h-4 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full pointer-events-none z-50 mix-blend-difference transition-transform duration-100 ease-out"
         style={{
-          left: mousePosition.x - 12,
-          top: mousePosition.y - 12,
-          transform: `scale(${Math.sin(Date.now() * 0.005) * 0.5 + 1})`
+          left: mousePosition.x - 8,
+          top: mousePosition.y - 8,
+          transform: `scale(${Math.sin(Date.now() * 0.005) * 0.3 + 1})`
         }}
       />
 
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-2xl z-40 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <div className="relative">
-                <h1 className="text-3xl font-black bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                  NEXUS
+                <h1 className="text-2xl font-black bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent tracking-tight">
+                  Xhospital
                 </h1>
-                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-lg blur opacity-30 animate-pulse"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-lg blur opacity-20 animate-pulse"></div>
               </div>
             </div>
             
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-white/70 hover:text-cyan-400 transition-all duration-300 font-medium tracking-wide">
+            <div className="hidden md:flex items-center space-x-6">
+              <a href="#features" className="text-white/70 hover:text-cyan-400 transition-all duration-300 font-medium tracking-wide text-sm">
                 FEATURES
               </a>
-              <a href="#testimonials" className="text-white/70 hover:text-purple-400 transition-all duration-300 font-medium tracking-wide">
+              <a href="#testimonials" className="text-white/70 hover:text-purple-400 transition-all duration-300 font-medium tracking-wide text-sm">
                 REVIEWS
               </a>
-              <a href="#contact" className="text-white/70 hover:text-pink-400 transition-all duration-300 font-medium tracking-wide">
+              <a href="#contact" className="text-white/70 hover:text-pink-400 transition-all duration-300 font-medium tracking-wide text-sm">
                 CONTACT
               </a>
             </div>
             
-            <div className="flex items-center space-x-4">
-              <button className="text-white/70 hover:text-white px-6 py-3 font-medium tracking-wide transition-all duration-300">
+            <div className="flex items-center space-x-3">
+              <button className="text-white/70 hover:text-white px-4 py-2 font-medium tracking-wide transition-all duration-300 text-sm">
                 LOGIN
               </button>
-              <button className="relative group bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 p-[2px] rounded-xl overflow-hidden">
-                <span className="block bg-black px-6 py-3 rounded-xl group-hover:bg-transparent transition-all duration-300 font-bold tracking-wide">
+              <button className="relative group bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 p-[1px] rounded-lg overflow-hidden">
+                <span className="block bg-black px-4 py-2 rounded-lg group-hover:bg-transparent transition-all duration-300 font-bold tracking-wide text-sm">
                   START FREE
                 </span>
               </button>
@@ -205,7 +205,7 @@ export default function HomePage() {
 
         {/* Floating Particles */}
         <div className="absolute inset-0">
-          {[...Array(50)].map((_, i) => (
+          {[...Array(30)].map((_, i) => (
             <div
               key={i}
               className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
@@ -221,63 +221,70 @@ export default function HomePage() {
 
         {/* Hero Content */}
         <div 
-          className="relative z-10 text-center px-6 max-w-7xl mx-auto"
+          className="relative z-10 text-center px-6 max-w-6xl mx-auto"
           style={{ 
             transform: `translateY(${scrollY * 0.3}px)`,
             opacity: 1 - scrollY * 0.001
           }}
         >
-          <div className="mb-8">
-            <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-bold bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 border border-white/20 backdrop-blur-xl">
-              <SparklesIcon className="w-5 h-5 mr-3 text-cyan-400" />
+          <div className="mb-6">
+            <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-bold bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 border border-white/20 backdrop-blur-xl tracking-wide">
+              <SparklesIcon className="w-4 h-4 mr-2 text-cyan-400" />
               NEXT-GEN HEALTHCARE PROTOCOL
             </span>
           </div>
 
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-8 leading-none">
-            <span className="block bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent">
-              FUTURE
-            </span>
-            <span className="block bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
-              MEDICINE
-            </span>
-          </h1>
+          <div className="mb-8">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-3 leading-tight tracking-tight">
+              <span className="block bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent">
+                FUTURE
+              </span>
+              <span className="block bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
+                MEDICINE.
+              </span>
+            </h1>
+            <div className="text-base md:text-lg font-bold text-cyan-400 mb-1 tracking-wide">
+              The Best Doctors Under One Roof
+            </div>
+            <div className="text-sm md:text-base font-semibold text-purple-400 tracking-wide">
+              The Strongest Team for Your Health
+            </div>
+          </div>
           
-          <p className="text-xl md:text-3xl text-white/80 mb-16 max-w-5xl mx-auto leading-relaxed font-light">
-            Experience healthcare beyond imagination. Neural AI, quantum security, 
-            metaverse consultations, and holographic data visualization.
+          <p className="text-base md:text-lg text-white/70 mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
+            Reach the Most Successful Doctors with Just One Touch. Experience healthcare beyond imagination with neural AI and quantum security.
           </p>
           
-          <div className="flex flex-col lg:flex-row gap-8 justify-center items-center mb-20">
-            <button className="group relative bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 p-[3px] rounded-2xl overflow-hidden transform hover:scale-105 transition-all duration-500">
-              <span className="flex items-center bg-black px-12 py-6 rounded-2xl group-hover:bg-transparent transition-all duration-500 text-xl font-black tracking-wide">
-                <PlayIcon className="w-6 h-6 mr-4" />
-                ENTER NEXUS
-                <ArrowRightIcon className="w-6 h-6 ml-4 group-hover:translate-x-2 transition-transform duration-300" />
+          <div className="flex flex-col lg:flex-row gap-6 justify-center items-center mb-16">
+            <button className="group relative bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 p-[2px] rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-500">
+              <span className="flex items-center bg-black px-8 py-4 rounded-xl group-hover:bg-transparent transition-all duration-500 text-base font-black tracking-wide">
+                <PlayIcon className="w-5 h-5 mr-3" />
+                ENTER Xhospital
+                <ArrowRightIcon className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
             </button>
             
-            <button className="group bg-white/5 backdrop-blur-xl border-2 border-white/20 hover:border-cyan-400/50 px-12 py-6 rounded-2xl text-xl font-black tracking-wide transition-all duration-500 transform hover:scale-105">
+            <button className="group bg-white/5 backdrop-blur-xl border-2 border-white/20 hover:border-cyan-400/50 px-8 py-4 rounded-xl text-base font-black tracking-wide transition-all duration-500 transform hover:scale-105">
               <span className="flex items-center">
-                <UserPlusIcon className="w-6 h-6 mr-4" />
+                <UserPlusIcon className="w-5 h-5 mr-3" />
                 DOCTOR ACCESS
               </span>
             </button>
           </div>
 
-          {/* Animated Stats */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Compact Stats */}
+          <div className="grid grid-cols-4 gap-6">
             {[
-              { value: '∞', label: 'QUANTUM SPEED', color: 'from-cyan-400 to-blue-500' },
-              { value: '99.9%', label: 'AI ACCURACY', color: 'from-purple-400 to-pink-500' },
-              { value: '24/7', label: 'NEURAL SUPPORT', color: 'from-green-400 to-emerald-500' },
+              { value: '∞', label: 'SPEED', color: 'from-cyan-400 to-blue-500' },
+              { value: '99.9%', label: 'ACCURACY', color: 'from-purple-400 to-pink-500' },
+              { value: '24/7', label: 'SUPPORT', color: 'from-green-400 to-emerald-500' },
               { value: '∆∇∞', label: 'DIMENSIONS', color: 'from-yellow-400 to-orange-500' }
             ].map((stat, index) => (
               <div key={index} className="group text-center">
-                <div className={`text-4xl lg:text-6xl font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`text-2xl md:text-3xl font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1 group-hover:scale-110 transition-transform duration-300`}>
                   {stat.value}
                 </div>
-                <div className="text-white/60 font-bold tracking-widest text-sm">
+                <div className="text-white/60 font-bold tracking-wider text-xs">
                   {stat.label}
                 </div>
               </div>
@@ -287,12 +294,12 @@ export default function HomePage() {
       </section>
 
       {/* Features Section with Individual Video Backgrounds */}
-      <section id="features" className="py-32 relative">
+      <section id="features" className="py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black"></div>
         
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-7xl font-black mb-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-5xl font-black mb-4 tracking-tight">
               <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 QUANTUM
               </span>
@@ -301,15 +308,18 @@ export default function HomePage() {
                 CAPABILITIES
               </span>
             </h2>
+            <p className="text-sm text-cyan-400 font-semibold tracking-wide">
+              The Best Doctors Under One Roof
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {features.map((feature, index) => {
               const Icon = feature.icon
               return (
                 <div 
                   key={index}
-                  className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-2xl rounded-3xl border border-white/10 overflow-hidden hover:border-white/30 transition-all duration-700 transform hover:scale-[1.02]"
+                  className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-2xl rounded-2xl border border-white/10 overflow-hidden hover:border-white/30 transition-all duration-700 transform hover:scale-[1.02]"
                 >
                   {/* Video Background */}
                   <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700">
@@ -327,21 +337,21 @@ export default function HomePage() {
                   {/* Gradient Overlay */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${feature.accent} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}></div>
                   
-                  <div className="relative p-12">
-                    <div className={`inline-flex p-6 rounded-2xl bg-gradient-to-br ${feature.accent} mb-8 group-hover:scale-110 transition-transform duration-500`}>
-                      <Icon className="w-10 h-10 text-white" />
+                  <div className="relative p-8">
+                    <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${feature.accent} mb-6 group-hover:scale-110 transition-transform duration-500`}>
+                      <Icon className="w-6 h-6 text-white" />
                     </div>
                     
-                    <h3 className="text-3xl font-black text-white mb-6 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-500 group-hover:bg-clip-text transition-all duration-500">
+                    <h3 className="text-xl font-black text-white mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-500 group-hover:bg-clip-text transition-all duration-500 tracking-tight">
                       {feature.title}
                     </h3>
                     
-                    <p className="text-white/70 text-lg leading-relaxed group-hover:text-white/90 transition-colors duration-500">
+                    <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-500">
                       {feature.description}
                     </p>
 
                     {/* Hover Effect Lines */}
-                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
                 </div>
               )
@@ -351,7 +361,7 @@ export default function HomePage() {
       </section>
 
       {/* Immersive CTA Section */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative py-20 overflow-hidden">
         {/* Background Video */}
         <div className="absolute inset-0">
           <video
@@ -361,13 +371,13 @@ export default function HomePage() {
             loop
             playsInline
           >
-            <source src="/video.webm" type="video/webm" />
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-futuristic-medical-interface-2142-large.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-r from-black via-purple-900/80 to-black"></div>
         </div>
         
-        <div className="relative max-w-6xl mx-auto text-center px-6">
-          <h2 className="text-5xl lg:text-8xl font-black mb-12">
+        <div className="relative max-w-5xl mx-auto text-center px-6">
+          <h2 className="text-3xl lg:text-6xl font-black mb-8 tracking-tight">
             <span className="bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent">
               READY TO
             </span>
@@ -377,39 +387,43 @@ export default function HomePage() {
             </span>
           </h2>
           
-          <p className="text-2xl text-white/80 mb-16 leading-relaxed font-light max-w-4xl mx-auto">
-            Join the healthcare revolution. Experience medicine beyond the boundaries of reality.
+          <div className="text-base text-purple-400 font-bold mb-2 tracking-wide">
+            The Strongest Team for Your Health
+          </div>
+          
+          <p className="text-lg text-white/80 mb-12 leading-relaxed font-light max-w-3xl mx-auto">
+            Reach the Most Successful Doctors with Just One Touch. Join the healthcare revolution.
           </p>
           
-          <div className="flex flex-col lg:flex-row gap-8 justify-center mb-16">
-            <button className="group relative bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 p-[3px] rounded-2xl overflow-hidden transform hover:scale-110 transition-all duration-500">
-              <span className="flex items-center justify-center bg-black px-16 py-8 rounded-2xl group-hover:bg-transparent transition-all duration-500 text-2xl font-black tracking-wide">
-                <HeartIcon className="w-8 h-8 mr-4 animate-pulse" />
+          <div className="flex flex-col lg:flex-row gap-6 justify-center mb-12">
+            <button className="group relative bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 p-[2px] rounded-xl overflow-hidden transform hover:scale-110 transition-all duration-500">
+              <span className="flex items-center justify-center bg-black px-12 py-5 rounded-xl group-hover:bg-transparent transition-all duration-500 text-lg font-black tracking-wide">
+                <HeartIcon className="w-6 h-6 mr-3 animate-pulse" />
                 PATIENT PORTAL
               </span>
             </button>
             
-            <button className="group bg-white/10 backdrop-blur-xl border-2 border-white/30 hover:border-cyan-400 px-16 py-8 rounded-2xl text-2xl font-black tracking-wide transition-all duration-500 transform hover:scale-110">
+            <button className="group bg-white/10 backdrop-blur-xl border-2 border-white/30 hover:border-cyan-400 px-12 py-5 rounded-xl text-lg font-black tracking-wide transition-all duration-500 transform hover:scale-110">
               <span className="flex items-center justify-center">
-                <LightBulbIcon className="w-8 h-8 mr-4" />
-                DOCTOR NEXUS
+                <LightBulbIcon className="w-6 h-6 mr-3" />
+                DOCTOR Xhospital
               </span>
             </button>
           </div>
 
-          <div className="text-white/60 text-lg font-medium tracking-wide">
+          <div className="text-white/60 text-sm font-medium tracking-wide">
             ✦ QUANTUM ENCRYPTED ✦ ZERO LATENCY ✦ INFINITE POSSIBILITIES ✦
           </div>
         </div>
       </section>
 
       {/* Futuristic Testimonials */}
-      <section id="testimonials" className="py-32 relative">
+      <section id="testimonials" className="py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black"></div>
         
-        <div className="relative max-w-6xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-7xl font-black mb-8">
+        <div className="relative max-w-5xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-5xl font-black mb-4 tracking-tight">
               <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 PIONEER
               </span>
@@ -418,41 +432,44 @@ export default function HomePage() {
                 TESTIMONIALS
               </span>
             </h2>
+            <p className="text-sm text-purple-400 font-semibold tracking-wide">
+              The Best Doctors Under One Roof
+            </p>
           </div>
 
           <div className="relative">
-            <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl rounded-3xl border border-white/20 p-16 overflow-hidden">
+            <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl rounded-2xl border border-white/20 p-12 overflow-hidden">
               {/* Background Pattern */}
               <div className="absolute inset-0 opacity-10">
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 animate-pulse"></div>
               </div>
               
               <div className="relative text-center">
-                <div className="mb-12">
+                <div className="mb-8">
                   <img 
                     src={testimonials[currentTestimonial].image} 
                     alt={testimonials[currentTestimonial].name}
-                    className="w-32 h-32 rounded-full mx-auto border-4 border-gradient-to-r from-cyan-400 to-purple-500 shadow-2xl"
+                    className="w-24 h-24 rounded-full mx-auto border-4 border-gradient-to-r from-cyan-400 to-purple-500 shadow-2xl"
                   />
-                  <div className="absolute inset-0 w-32 h-32 rounded-full mx-auto bg-gradient-to-r from-cyan-400/30 to-purple-500/30 blur-xl"></div>
+                  <div className="absolute inset-0 w-24 h-24 rounded-full mx-auto bg-gradient-to-r from-cyan-400/30 to-purple-500/30 blur-xl"></div>
                 </div>
                 
-                <div className="flex justify-center mb-8">
+                <div className="flex justify-center mb-6">
                   {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                    <StarIcon key={i} className="w-8 h-8 text-yellow-400 fill-current animate-pulse" style={{ animationDelay: `${i * 200}ms` }} />
+                    <StarIcon key={i} className="w-6 h-6 text-yellow-400 fill-current animate-pulse" style={{ animationDelay: `${i * 200}ms` }} />
                   ))}
                 </div>
                 
-                <blockquote className="text-2xl lg:text-3xl text-white/90 italic mb-12 leading-relaxed font-light max-w-4xl mx-auto">
+                <blockquote className="text-lg lg:text-xl text-white/90 italic mb-8 leading-relaxed font-light max-w-3xl mx-auto">
                   "{testimonials[currentTestimonial].quote}"
                 </blockquote>
                 
                 <div className="mb-4">
-                  <h4 className="text-2xl font-black text-white mb-2">
+                  <h4 className="text-xl font-black text-white mb-1">
                     {testimonials[currentTestimonial].name}
                   </h4>
-                  <p className="text-cyan-400 font-bold text-lg mb-2">{testimonials[currentTestimonial].role}</p>
-                  <p className="text-white/60 font-medium">{testimonials[currentTestimonial].specialty}</p>
+                  <p className="text-cyan-400 font-bold text-base mb-1">{testimonials[currentTestimonial].role}</p>
+                  <p className="text-white/60 font-medium text-sm">{testimonials[currentTestimonial].specialty}</p>
                 </div>
               </div>
             </div>
@@ -460,25 +477,25 @@ export default function HomePage() {
             {/* Navigation */}
             <button 
               onClick={prevTestimonial}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-8 bg-gradient-to-r from-cyan-500 to-purple-500 p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300"
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-6 bg-gradient-to-r from-cyan-500 to-purple-500 p-3 rounded-full shadow-2xl hover:scale-110 transition-all duration-300"
             >
-              <ChevronLeftIcon className="w-8 h-8 text-white" />
+              <ChevronLeftIcon className="w-6 h-6 text-white" />
             </button>
             
             <button 
               onClick={nextTestimonial}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-8 bg-gradient-to-r from-purple-500 to-pink-500 p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300"
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-6 bg-gradient-to-r from-purple-500 to-pink-500 p-3 rounded-full shadow-2xl hover:scale-110 transition-all duration-300"
             >
-              <ChevronRightIcon className="w-8 h-8 text-white" />
+              <ChevronRightIcon className="w-6 h-6 text-white" />
             </button>
 
             {/* Dots */}
-            <div className="flex justify-center mt-16 space-x-4">
+            <div className="flex justify-center mt-12 space-x-3">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
-                  className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentTestimonial 
                       ? 'bg-gradient-to-r from-cyan-400 to-purple-500 scale-125 shadow-lg' 
                       : 'bg-white/30 hover:bg-white/50'
@@ -491,32 +508,37 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="relative py-20 border-t border-white/10">
+      <footer className="relative py-16 border-t border-white/10">
         <div className="absolute inset-0 bg-gradient-to-t from-black to-gray-900"></div>
         
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
             <div className="lg:col-span-2">
-              <h3 className="text-4xl font-black bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">
-                NEXUS
+              <h3 className="text-3xl font-black bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4 tracking-tight">
+                Xhospital
               </h3>
-              <p className="text-white/70 text-lg leading-relaxed mb-8 max-w-md">
-                Pioneering the future of healthcare through quantum computing, neural AI, 
-                and metaverse integration for unprecedented medical experiences.
+              <div className="text-sm text-cyan-400 font-bold mb-2 tracking-wide">
+                The Best Doctors Under One Roof
+              </div>
+              <div className="text-xs text-purple-400 font-semibold mb-4 tracking-wide">
+                The Strongest Team for Your Health
+              </div>
+              <p className="text-white/70 text-sm leading-relaxed mb-6 max-w-md">
+                Reach the Most Successful Doctors with Just One Touch. Pioneering the future of healthcare through quantum computing and neural AI.
               </p>
-              <div className="flex space-x-6">
+              <div className="flex space-x-4">
                 {['twitter', 'linkedin', 'github'].map((social, index) => (
                   <a key={social} href="#" className="text-white/50 hover:text-cyan-400 transition-colors duration-300 transform hover:scale-110">
-                    <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"></div>
+                    <div className="w-6 h-6 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"></div>
                   </a>
                 ))}
               </div>
             </div>
             
             <div>
-              <h4 className="text-xl font-black text-white mb-8 tracking-wide">PLATFORM</h4>
-              <ul className="space-y-4 text-white/70">
-                {['Patient Portal', 'Doctor Nexus', 'Neural AI', 'Quantum Security', 'Metaverse'].map((item) => (
+              <h4 className="text-base font-black text-white mb-6 tracking-wide">PLATFORM</h4>
+              <ul className="space-y-3 text-white/70 text-sm">
+                {['Patient Portal', 'Doctor Xhospital', 'Neural AI', 'Quantum Security', 'Metaverse'].map((item) => (
                   <li key={item}>
                     <a href="#" className="hover:text-cyan-400 transition-colors duration-300 font-medium">
                       {item}
@@ -527,9 +549,9 @@ export default function HomePage() {
             </div>
             
             <div>
-              <h4 className="text-xl font-black text-white mb-8 tracking-wide">SUPPORT</h4>
-              <ul className="space-y-4 text-white/70">
-                {['Quantum Help', 'Neural Support', 'Privacy Shield', 'Terms Matrix', 'Contact Nexus'].map((item) => (
+              <h4 className="text-base font-black text-white mb-6 tracking-wide">SUPPORT</h4>
+              <ul className="space-y-3 text-white/70 text-sm">
+                {['Quantum Help', 'Neural Support', 'Privacy Shield', 'Terms Matrix', 'Contact Xhospital'].map((item) => (
                   <li key={item}>
                     <a href="#" className="hover:text-purple-400 transition-colors duration-300 font-medium">
                       {item}
@@ -540,9 +562,9 @@ export default function HomePage() {
             </div>
           </div>
           
-          <div className="border-t border-white/10 pt-8 text-center">
-            <p className="text-white/50 font-medium">
-              © 2024 NEXUS Healthcare Protocol. 
+          <div className="border-t border-white/10 pt-6 text-center">
+            <p className="text-white/50 font-medium text-sm">
+              © 2024 Xhospital Healthcare Protocol. 
               <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"> Transcending Reality.</span>
             </p>
           </div>
@@ -551,3 +573,6 @@ export default function HomePage() {
     </div>
   )
 }
+
+
+
