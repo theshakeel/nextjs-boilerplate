@@ -59,7 +59,7 @@ export default function HomePage() {
     },
     {
       icon: CreditCardIcon,
-      title: 'Blockchain Payments',
+      title: 'Stripe/Card Payments',
       description: 'Decentralized payment system with smart contracts and instant global transactions.',
       video: 'https://assets.mixkit.co/videos/preview/mixkit-cryptocurrency-blockchain-2132-large.mp4',
       accent: 'from-yellow-400 via-orange-500 to-red-500'
