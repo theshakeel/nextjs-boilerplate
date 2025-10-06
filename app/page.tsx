@@ -1,5 +1,4 @@
 'use client'
-
 import React, { useEffect, useState } from 'react'
 import { 
   ShieldCheckIcon, 
@@ -26,7 +25,7 @@ export default function HomePage() {
   const [scrollY, setScrollY] = useState(0)
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-
+   const portalBase = process.env.NEXT_PUBLIC_PORTAL || "";
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
     const handleMouseMove = (e: MouseEvent) => {
@@ -53,14 +52,15 @@ export default function HomePage() {
     {
       icon: LightBulbIcon,
       title: 'Neural Treatment AI',
-      description: 'Advanced machine learning algorithms that predict treatment outcomes with 99.7% accuracy.',
+      description: 'Advanced machine learning algorithms that deliver highly reliable treatment insights.',
       video: 'https://assets.mixkit.co/videos/preview/mixkit-brain-hologram-2131-large.mp4',
       accent: 'from-cyan-400 via-blue-500 to-indigo-600'
-    },
+    }
+    ,
     {
       icon: CreditCardIcon,
       title: 'Stripe/Card Payments',
-      description: 'Decentralized payment system with smart contracts and instant global transactions.',
+      description: 'Traditional payment methods and instant global transactions.',
       video: 'https://assets.mixkit.co/videos/preview/mixkit-cryptocurrency-blockchain-2132-large.mp4',
       accent: 'from-yellow-400 via-orange-500 to-red-500'
     },
@@ -72,12 +72,13 @@ export default function HomePage() {
       accent: 'from-green-400 via-emerald-500 to-teal-500'
     },
     {
-      icon: VideoCameraIcon,
-      title: 'Metaverse Consultations',
-      description: 'Virtual reality medical consultations with haptic feedback and real-time diagnostics.',
-      video: 'https://assets.mixkit.co/videos/preview/mixkit-virtual-reality-2134-large.mp4',
-      accent: 'from-purple-400 via-violet-500 to-indigo-500'
-    },
+  icon: VideoCameraIcon,
+  title: 'Virtual Consultations',
+  description: 'Seamless video consultations with real-time data sharing and integrated diagnostics.',
+  video: 'https://assets.mixkit.co/videos/preview/mixkit-virtual-reality-2134-large.mp4',
+  accent: 'from-purple-400 via-violet-500 to-indigo-500'
+},
+
     {
       icon: BellIcon,
       title: 'Quantum Notifications',
@@ -121,7 +122,9 @@ export default function HomePage() {
   const prevTestimonial = () => {
     setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)
   }
-
+ const handleRedirect = (role: "patient" | "doctor") => {
+    window.location.href = `${portalBase}/dashboard/auth?role=${role}`;
+  };
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Cursor Follower */}
@@ -134,45 +137,7 @@ export default function HomePage() {
         }}
       />
 
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-2xl z-40 border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <div className="relative">
-                <h1 className="text-2xl font-black bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent tracking-tight">
-                  Xhospital
-                </h1>
-                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-lg blur opacity-20 animate-pulse"></div>
-              </div>
-            </div>
-            
-            <div className="hidden md:flex items-center space-x-6">
-              <a href="#features" className="text-white/70 hover:text-cyan-400 transition-all duration-300 font-medium tracking-wide text-sm">
-                FEATURES
-              </a>
-              <a href="#testimonials" className="text-white/70 hover:text-purple-400 transition-all duration-300 font-medium tracking-wide text-sm">
-                REVIEWS
-              </a>
-              <a href="#contact" className="text-white/70 hover:text-pink-400 transition-all duration-300 font-medium tracking-wide text-sm">
-                CONTACT
-              </a>
-            </div>
-            
-            <div className="flex items-center space-x-3">
-              <button className="text-white/70 hover:text-white px-4 py-2 font-medium tracking-wide transition-all duration-300 text-sm">
-                LOGIN
-              </button>
-              <button className="relative group bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 p-[1px] rounded-lg overflow-hidden">
-                <span className="block bg-black px-4 py-2 rounded-lg group-hover:bg-transparent transition-all duration-300 font-bold tracking-wide text-sm">
-                  START FREE
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
-
+    
       {/* Hero Section with Video Background */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Multiple Video Layers */}
@@ -235,7 +200,7 @@ export default function HomePage() {
           </div>
 
           <div className="mb-8">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-3 leading-tight tracking-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-3 leading-tight tracking-tight">
               <span className="block bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent">
                 FUTURE
               </span>
@@ -256,7 +221,7 @@ export default function HomePage() {
           </p>
           
           <div className="flex flex-col lg:flex-row gap-6 justify-center items-center mb-16">
-            <button className="group relative bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 p-[2px] rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-500">
+            <button onClick={() => handleRedirect("patient")} className="group relative bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 p-[2px] rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-500">
               <span className="flex items-center bg-black px-8 py-4 rounded-xl group-hover:bg-transparent transition-all duration-500 text-base font-black tracking-wide">
                 <PlayIcon className="w-5 h-5 mr-3" />
                 ENTER Xhospital
@@ -264,7 +229,7 @@ export default function HomePage() {
               </span>
             </button>
             
-            <button className="group bg-white/5 backdrop-blur-xl border-2 border-white/20 hover:border-cyan-400/50 px-8 py-4 rounded-xl text-base font-black tracking-wide transition-all duration-500 transform hover:scale-105">
+            <button  onClick={() => handleRedirect("doctor")} className="group bg-white/5 backdrop-blur-xl border-2 border-white/20 hover:border-cyan-400/50 px-8 py-4 rounded-xl text-base font-black tracking-wide transition-all duration-500 transform hover:scale-105">
               <span className="flex items-center">
                 <UserPlusIcon className="w-5 h-5 mr-3" />
                 DOCTOR ACCESS
@@ -277,7 +242,7 @@ export default function HomePage() {
             {[
               { value: '∞', label: 'SPEED', color: 'from-cyan-400 to-blue-500' },
               { value: '99.9%', label: 'ACCURACY', color: 'from-purple-400 to-pink-500' },
-              { value: '24/7', label: 'SUPPORT', color: 'from-green-400 to-emerald-500' },
+              { value: '99%', label: 'UPTIME', color: 'from-green-400 to-emerald-500' },
               { value: '∆∇∞', label: 'DIMENSIONS', color: 'from-yellow-400 to-orange-500' }
             ].map((stat, index) => (
               <div key={index} className="group text-center">
@@ -508,68 +473,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="relative py-16 border-t border-white/10">
-        <div className="absolute inset-0 bg-gradient-to-t from-black to-gray-900"></div>
-        
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
-            <div className="lg:col-span-2">
-              <h3 className="text-3xl font-black bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4 tracking-tight">
-                Xhospital
-              </h3>
-              <div className="text-sm text-cyan-400 font-bold mb-2 tracking-wide">
-                The Best Doctors Under One Roof
-              </div>
-              <div className="text-xs text-purple-400 font-semibold mb-4 tracking-wide">
-                The Strongest Team for Your Health
-              </div>
-              <p className="text-white/70 text-sm leading-relaxed mb-6 max-w-md">
-                Reach the Most Successful Doctors with Just One Touch. Pioneering the future of healthcare through quantum computing and neural AI.
-              </p>
-              <div className="flex space-x-4">
-                {['twitter', 'linkedin', 'github'].map((social, index) => (
-                  <a key={social} href="#" className="text-white/50 hover:text-cyan-400 transition-colors duration-300 transform hover:scale-110">
-                    <div className="w-6 h-6 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"></div>
-                  </a>
-                ))}
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="text-base font-black text-white mb-6 tracking-wide">PLATFORM</h4>
-              <ul className="space-y-3 text-white/70 text-sm">
-                {['Patient Portal', 'Doctor Xhospital', 'Neural AI', 'Quantum Security', 'Metaverse'].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="hover:text-cyan-400 transition-colors duration-300 font-medium">
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-base font-black text-white mb-6 tracking-wide">SUPPORT</h4>
-              <ul className="space-y-3 text-white/70 text-sm">
-                {['Quantum Help', 'Neural Support', 'Privacy Shield', 'Terms Matrix', 'Contact Xhospital'].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="hover:text-purple-400 transition-colors duration-300 font-medium">
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-white/10 pt-6 text-center">
-            <p className="text-white/50 font-medium text-sm">
-              © 2024 Xhospital Healthcare Protocol. 
-              <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"> Transcending Reality.</span>
-            </p>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   )
 }
