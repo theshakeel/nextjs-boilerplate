@@ -19,7 +19,7 @@ type LinkDetails = {
 };
 
 
-export default function PaymentPage(): JSX.Element {
+export default function PaymentPage() {
   const { id } = useParams(); // this gives you the dynamic route param
   const params = useSearchParams();
   const router = useRouter();
