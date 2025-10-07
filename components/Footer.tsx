@@ -11,13 +11,22 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <h3 className="text-3xl font-black bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4 tracking-tight">
-              Xhospital
-            </h3>
+          <h3 className="text-3xl font-black bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4 tracking-tight">
+            Xhospital
+          </h3>
+
+          <div className="flex flex-col space-y-1 text-sm font-medium text-white/60 mb-4">
+            <span className="text-white/80 tracking-wide">X Hospital LLC</span>
+            <span className="text-purple-400/80">Address: 30 N Gould St #45372, Sheridan, WY 82801</span>
+            <span className="text-white/70">United States</span>
+            <span className="text-purple-400/90">Tel: +1 815-982-3054</span>
+            <span className="text-white-400/90">E-Mail: privacy@xhospital.net</span>
+          </div>
+
             <div className="text-sm text-cyan-400 font-bold mb-2 tracking-wide">
               The Best Doctors Under One Roof
             </div>
-            <div className="text-xs text-purple-400 font-semibold mb-4 tracking-wide">
+            <div className="text-xs text-purple-400/80 font-semibold mb-4 tracking-wide">
               The Strongest Team for Your Health
             </div>
             <p className="text-white/70 text-sm leading-relaxed mb-6 max-w-md">

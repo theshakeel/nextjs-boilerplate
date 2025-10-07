@@ -60,7 +60,7 @@ export default function HomePage() {
     {
       icon: CreditCardIcon,
       title: 'Stripe/Card Payments',
-      description: 'Traditional payment methods and instant global transactions.',
+      description: 'Card payments via Stripe with global coverage.',
       video: 'https://assets.mixkit.co/videos/preview/mixkit-cryptocurrency-blockchain-2132-large.mp4',
       accent: 'from-yellow-400 via-orange-500 to-red-500'
     },
@@ -94,7 +94,7 @@ export default function HomePage() {
       role: 'Neurosurgeon & AI Researcher',
       image: '/api/placeholder/100/100',
       rating: 5,
-      quote: 'This platform is from the future. The neural AI predicted my patient outcomes better than 20 years of experience. Revolutionary.',
+      quote: 'This platform is from the future. The tools help me work faster and stay organized, my patient outcomes better than 20 years of experience. Revolutionary.',
       specialty: 'Neural Interface Surgery'
     },
     {
@@ -102,7 +102,7 @@ export default function HomePage() {
       role: 'Biohacker & Patient',
       image: '/api/placeholder/100/100',
       rating: 5,
-      quote: 'The metaverse consultations feel more real than reality. My doctor examined me in VR and caught issues traditional methods missed.',
+      quote: 'The digital consultation felt surprisingly personal. My doctor identified details that might have been overlooked in a routine checkup.',
       specialty: 'Longevity Medicine'
     },
     {
@@ -238,23 +238,25 @@ export default function HomePage() {
           </div>
 
           {/* Compact Stats */}
-          <div className="grid grid-cols-4 gap-6">
+          <div className="grid grid-cols-3 gap-10 justify-items-center mt-4">
             {[
               { value: '∞', label: 'SPEED', color: 'from-cyan-400 to-blue-500' },
-              { value: '99.9%', label: 'ACCURACY', color: 'from-purple-400 to-pink-500' },
               { value: '99%', label: 'UPTIME', color: 'from-green-400 to-emerald-500' },
-              { value: '∆∇∞', label: 'DIMENSIONS', color: 'from-yellow-400 to-orange-500' }
+              { value: '∆∇∞', label: 'DIMENSIONS', color: 'from-yellow-400 to-orange-500' },
             ].map((stat, index) => (
-              <div key={index} className="group text-center">
-                <div className={`text-2xl md:text-3xl font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1 group-hover:scale-110 transition-transform duration-300`}>
+              <div key={index} className="group text-center transform transition-transform duration-300 hover:scale-105">
+                <div
+                  className={`text-3xl md:text-5xl font-extrabold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300`}
+                >
                   {stat.value}
                 </div>
-                <div className="text-white/60 font-bold tracking-wider text-xs">
+                <div className="text-white/70 font-semibold tracking-widest text-sm md:text-base uppercase">
                   {stat.label}
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
