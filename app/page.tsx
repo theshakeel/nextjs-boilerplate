@@ -45,7 +45,7 @@ export default function HomePage() {
     {
       icon: ShieldCheckIcon,
       title: 'Quantum Security',
-      description: 'Military-grade quantum encryption with biometric authentication and zero-knowledge architecture.',
+      description: 'Advanced end-to-end encryption with secure authentication and privacy-by-design.',
       video: 'https://assets.mixkit.co/videos/preview/mixkit-digital-security-hud-2130-large.mp4',
       accent: 'from-red-500 via-pink-500 to-purple-500'
     },
@@ -67,7 +67,7 @@ export default function HomePage() {
     {
       icon: ChartBarIcon,
       title: 'Holographic Analytics',
-      description: '3D data visualization with AR/VR integration for immersive health monitoring.',
+      description: 'Interactive 3D health data visualization for enhanced monitoring.',
       video: 'https://assets.mixkit.co/videos/preview/mixkit-data-visualization-2133-large.mp4',
       accent: 'from-green-400 via-emerald-500 to-teal-500'
     },
@@ -94,7 +94,7 @@ export default function HomePage() {
       role: 'Neurosurgeon & AI Researcher',
       image: '/api/placeholder/100/100',
       rating: 5,
-      quote: 'This platform is from the future. The tools help me work faster and stay organized, my patient outcomes better than 20 years of experience. Revolutionary.',
+      quote: 'This platform is from the future. The tools help me work faster and stay organized, The tools help me work faster and stay organized. Revolutionary.',
       specialty: 'Neural Interface Surgery'
     },
     {
