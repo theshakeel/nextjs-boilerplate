@@ -1,14 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
+import { useParams } from "next/navigation";
 export default function OnboardingSuccessPage() {
   const [status, setStatus] = useState<"verifying" | "success" | "failed">("verifying");
-
+  const { id } = useParams();
   useEffect(() => {
     const verifyAccount = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/checkout/verify-account`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/checkout/verify-account/${id}`, {
           credentials: "include",
         });
         const data = await res.json();
